@@ -326,7 +326,7 @@
               <el-button
                 type="text"
                 size="small"
-                @click="download($base.url + scope.row.canhuirenyuan)"
+                @click="download($base.url+scope.row.canhuirenyuan)"
               >
                 下载
               </el-button>

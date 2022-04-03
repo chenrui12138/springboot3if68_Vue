@@ -1,112 +1,212 @@
 <template>
   <div class="addEdit-block">
     <el-form
-        class="detail-form-content"
-        ref="ruleForm"
-        :model="ruleForm"
-        :rules="rules"
-        label-width="80px"
-        :style="{backgroundColor:addEditForm.addEditBoxColor}"
+      class="detail-form-content"
+      ref="ruleForm"
+      :model="ruleForm"
+      :rules="rules"
+      label-width="80px"
+      :style="{ backgroundColor: addEditForm.addEditBoxColor }"
     >
       <el-row>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="预约编号" prop="yuyuebianhao">
-            <el-input v-model="ruleForm.yuyuebianhao"
-                      placeholder="预约编号" readonly></el-input>
+          <el-form-item
+            class="input"
+            v-if="type != 'info'"
+            label="预约编号"
+            prop="yuyuebianhao"
+          >
+            <el-input
+              v-model="ruleForm.yuyuebianhao"
+              placeholder="预约编号"
+              readonly
+            ></el-input>
           </el-form-item>
           <div v-else>
-            <el-form-item class="input" v-if="ruleForm.yuyuebianhao" label="预约编号" prop="yuyuebianhao">
-              <el-input v-model="ruleForm.yuyuebianhao"
-                        placeholder="预约编号" readonly></el-input>
+            <el-form-item
+              class="input"
+              v-if="ruleForm.yuyuebianhao"
+              label="预约编号"
+              prop="yuyuebianhao"
+            >
+              <el-input
+                v-model="ruleForm.yuyuebianhao"
+                placeholder="预约编号"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="编号" prop="bianhao">
-            <el-input v-model="ruleForm.bianhao"
-                      placeholder="编号" clearable :readonly="ro.bianhao"></el-input>
+          <el-form-item
+            class="input"
+            v-if="type != 'info'"
+            label="编号"
+            prop="bianhao"
+          >
+            <el-input
+              v-model="ruleForm.bianhao"
+              placeholder="编号"
+              clearable
+              :readonly="ro.bianhao"
+            ></el-input>
           </el-form-item>
           <div v-else>
             <el-form-item class="input" label="编号" prop="bianhao">
-              <el-input v-model="ruleForm.bianhao"
-                        placeholder="编号" readonly></el-input>
+              <el-input
+                v-model="ruleForm.bianhao"
+                placeholder="编号"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="名称" prop="mingcheng">
-            <el-input v-model="ruleForm.mingcheng"
-                      placeholder="名称" clearable :readonly="ro.mingcheng"></el-input>
+          <el-form-item
+            class="input"
+            v-if="type != 'info'"
+            label="名称"
+            prop="mingcheng"
+          >
+            <el-input
+              v-model="ruleForm.mingcheng"
+              placeholder="名称"
+              clearable
+              :readonly="ro.mingcheng"
+            ></el-input>
           </el-form-item>
           <div v-else>
             <el-form-item class="input" label="名称" prop="mingcheng">
-              <el-input v-model="ruleForm.mingcheng"
-                        placeholder="名称" readonly></el-input>
+              <el-input
+                v-model="ruleForm.mingcheng"
+                placeholder="名称"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="工号" prop="gonghao">
-            <el-input v-model="ruleForm.gonghao"
-                      placeholder="工号" clearable :readonly="ro.gonghao"></el-input>
+          <el-form-item
+            class="input"
+            v-if="type != 'info'"
+            label="工号"
+            prop="gonghao"
+          >
+            <el-input
+              v-model="ruleForm.gonghao"
+              placeholder="工号"
+              clearable
+              :readonly="ro.gonghao"
+            ></el-input>
           </el-form-item>
           <div v-else>
             <el-form-item class="input" label="工号" prop="gonghao">
-              <el-input v-model="ruleForm.gonghao"
-                        placeholder="工号" readonly></el-input>
+              <el-input
+                v-model="ruleForm.gonghao"
+                placeholder="工号"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="姓名" prop="xingming">
-            <el-input v-model="ruleForm.xingming"
-                      placeholder="姓名" clearable :readonly="ro.xingming"></el-input>
+          <el-form-item
+            class="input"
+            v-if="type != 'info'"
+            label="姓名"
+            prop="xingming"
+          >
+            <el-input
+              v-model="ruleForm.xingming"
+              placeholder="姓名"
+              clearable
+              :readonly="ro.xingming"
+            ></el-input>
           </el-form-item>
           <div v-else>
             <el-form-item class="input" label="姓名" prop="xingming">
-              <el-input v-model="ruleForm.xingming"
-                        placeholder="姓名" readonly></el-input>
+              <el-input
+                v-model="ruleForm.xingming"
+                placeholder="姓名"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="联系电话" prop="lianxidianhua">
-            <el-input v-model="ruleForm.lianxidianhua"
-                      placeholder="联系电话" clearable :readonly="ro.lianxidianhua"></el-input>
+          <el-form-item
+            class="input"
+            v-if="type != 'info'"
+            label="联系电话"
+            prop="lianxidianhua"
+          >
+            <el-input
+              v-model="ruleForm.lianxidianhua"
+              placeholder="联系电话"
+              clearable
+              :readonly="ro.lianxidianhua"
+            ></el-input>
           </el-form-item>
           <div v-else>
             <el-form-item class="input" label="联系电话" prop="lianxidianhua">
-              <el-input v-model="ruleForm.lianxidianhua"
-                        placeholder="联系电话" readonly></el-input>
+              <el-input
+                v-model="ruleForm.lianxidianhua"
+                placeholder="联系电话"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="会议主题" prop="huiyizhuti">
-            <el-input v-model="ruleForm.huiyizhuti"
-                      placeholder="会议主题" clearable :readonly="ro.huiyizhuti"></el-input>
+          <el-form-item
+            class="input"
+            v-if="type != 'info'"
+            label="会议主题"
+            prop="huiyizhuti"
+          >
+            <el-input
+              v-model="ruleForm.huiyizhuti"
+              placeholder="会议主题"
+              clearable
+              :readonly="ro.huiyizhuti"
+            ></el-input>
           </el-form-item>
           <div v-else>
             <el-form-item class="input" label="会议主题" prop="huiyizhuti">
-              <el-input v-model="ruleForm.huiyizhuti"
-                        placeholder="会议主题" readonly></el-input>
+              <el-input
+                v-model="ruleForm.huiyizhuti"
+                placeholder="会议主题"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="24">
-          <el-form-item class="upload" v-if="type!='info'&& !ro.canhuirenyuan" label="参会人员" prop="canhuirenyuan">
+          <el-form-item
+            class="upload"
+            v-if="type != 'info' && !ro.canhuirenyuan"
+            label="参会人员"
+            prop="canhuirenyuan"
+          >
             <file-upload
-                tip="点击上传参会人员"
-                action="file/upload"
-                :limit="1"
-                :multiple="true"
-                :fileUrls="ruleForm.canhuirenyuan?ruleForm.canhuirenyuan:''"
-                @change="canhuirenyuanUploadChange"
+              tip="点击上传参会人员"
+              action="file/upload"
+              :limit="1"
+              :multiple="true"
+              :fileUrls="ruleForm.canhuirenyuan ? ruleForm.canhuirenyuan : ''"
+              @change="canhuirenyuanUploadChange"
             ></file-upload>
           </el-form-item>
           <div v-else>
-            <el-form-item v-if="ruleForm.canhuirenyuan" label="参会人员" prop="canhuirenyuan">
-              <el-button type="text" size="small" @click="download(ruleForm.canhuirenyuan)">下载</el-button>
+            <el-form-item
+              v-if="ruleForm.canhuirenyuan"
+              label="参会人员"
+              prop="canhuirenyuan"
+            >
+              <el-button
+                type="text"
+                size="small"
+                @click="download($base.url+ruleForm.canhuirenyuan)">下载</el-button>
               <!-- 展示文件名称 -->
               <!-- <el-date-picker
                 value-format="yyyy-MM-dd HH:mm:ss"
@@ -114,74 +214,125 @@
                 type="datetime"
                 placeholder="会议时间">
             </el-date-picker> -->
-
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="date" v-if="type!='info'" label="会议时间" prop="huiyishijian">
+          <el-form-item
+            class="date"
+            v-if="type != 'info'"
+            label="会议时间"
+            prop="huiyishijian"
+          >
             <el-date-picker
-                value-format="yyyy-MM-dd HH:mm:ss"
-                v-model="ruleForm.huiyishijian"
-                type="datetime"
-                placeholder="会议时间">
+              value-format="yyyy-MM-dd HH:mm:ss"
+              v-model="ruleForm.huiyishijian"
+              type="datetime"
+              placeholder="会议时间"
+            >
             </el-date-picker>
           </el-form-item>
           <div v-else>
-            <el-form-item class="input" v-if="ruleForm.huiyishijian" label="会议时间" prop="huiyishijian">
-              <el-input v-model="ruleForm.huiyishijian"
-                        placeholder="会议时间" readonly></el-input>
+            <el-form-item
+              class="input"
+              v-if="ruleForm.huiyishijian"
+              label="会议时间"
+              prop="huiyishijian"
+            >
+              <el-input
+                v-model="ruleForm.huiyishijian"
+                placeholder="会议时间"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
         <el-col :span="12">
-          <el-form-item class="input" v-if="type!='info'" label="使用时长" prop="shiyongshizhang">
-            <el-input v-model="ruleForm.shiyongshizhang"
-                      placeholder="使用时长" clearable :readonly="ro.shiyongshizhang"></el-input>
+          <el-form-item
+            class="input"
+            v-if="type != 'info'"
+            label="使用时长"
+            prop="shiyongshizhang"
+          >
+            <el-input
+              v-model="ruleForm.shiyongshizhang"
+              placeholder="使用时长"
+              clearable
+              :readonly="ro.shiyongshizhang"
+            ></el-input>
           </el-form-item>
           <div v-else>
             <el-form-item class="input" label="使用时长" prop="shiyongshizhang">
-              <el-input v-model="ruleForm.shiyongshizhang"
-                        placeholder="使用时长" readonly></el-input>
+              <el-input
+                v-model="ruleForm.shiyongshizhang"
+                placeholder="使用时长"
+                readonly
+              ></el-input>
             </el-form-item>
           </div>
         </el-col>
       </el-row>
       <el-row>
         <el-col :span="24">
-          <el-form-item class="textarea" v-if="type!='info'" label="预约备注" prop="yuyuebeizhu">
+          <el-form-item
+            class="textarea"
+            v-if="type != 'info'"
+            label="预约备注"
+            prop="yuyuebeizhu"
+          >
             <el-input
-                style="min-width: 200px; max-width: 600px;"
-                type="textarea"
-                :rows="8"
-                placeholder="预约备注"
-                v-model="ruleForm.yuyuebeizhu">
+              style="min-width: 200px; max-width: 600px"
+              type="textarea"
+              :rows="8"
+              placeholder="预约备注"
+              v-model="ruleForm.yuyuebeizhu"
+            >
             </el-input>
           </el-form-item>
           <div v-else>
-            <el-form-item v-if="ruleForm.yuyuebeizhu" label="预约备注" prop="yuyuebeizhu">
+            <el-form-item
+              v-if="ruleForm.yuyuebeizhu"
+              label="预约备注"
+              prop="yuyuebeizhu"
+            >
               <span>{{ ruleForm.yuyuebeizhu }}</span>
             </el-form-item>
           </div>
         </el-col>
       </el-row>
       <el-form-item class="btn">
-        <el-button v-if="type!='info'" type="primary" class="btn-success" @click="onSubmit">提交</el-button>
-        <el-button v-if="type!='info'" class="btn-close" @click="back()">取消</el-button>
-        <el-button v-if="type=='info'" class="btn-close" @click="back()">返回</el-button>
+        <el-button
+          v-if="type != 'info'"
+          type="primary"
+          class="btn-success"
+          @click="onSubmit"
+          >提交</el-button
+        >
+        <el-button v-if="type != 'info'" class="btn-close" @click="back()"
+          >取消</el-button
+        >
+        <el-button v-if="type == 'info'" class="btn-close" @click="back()"
+          >返回</el-button
+        >
       </el-form-item>
     </el-form>
-
-
   </div>
 </template>
 <script>
 // 数字，邮件，手机，url，身份证校验
-import {isNumber, isIntNumer, isEmail, isPhone, isMobile, isURL, checkIdCard} from "@/utils/validate";
+import {
+  isNumber,
+  isIntNumer,
+  isEmail,
+  isPhone,
+  isMobile,
+  isURL,
+  checkIdCard,
+} from "@/utils/validate";
 
 export default {
   data() {
-    let self = this
+    let self = this;
     var validateIdCard = (rule, value, callback) => {
       if (!value) {
         callback();
@@ -247,82 +398,82 @@ export default {
     };
     return {
       addEditForm: {
-        "btnSaveFontColor": "#fff",
-        "selectFontSize": "14px",
-        "btnCancelBorderColor": "rgba(255, 255, 255, 1)",
-        "inputBorderRadius": "4px",
-        "inputFontSize": "14px",
-        "textareaBgColor": "#fff",
-        "btnSaveFontSize": "14px",
-        "textareaBorderRadius": "4px",
-        "uploadBgColor": "#fff",
-        "textareaBorderStyle": "solid",
-        "btnCancelWidth": "88px",
-        "textareaHeight": "120px",
-        "dateBgColor": "#fff",
-        "btnSaveBorderRadius": "30px 0 0 0 ",
-        "uploadLableFontSize": "14px",
-        "textareaBorderWidth": "1px",
-        "inputLableColor": "rgba(48, 208, 182, 1)",
-        "addEditBoxColor": "rgba(255, 255, 255, 0)",
-        "dateIconFontSize": "14px",
-        "btnSaveBgColor": "rgba(48, 208, 182, 1)",
-        "uploadIconFontColor": "rgba(48, 208, 182, 1)",
-        "textareaBorderColor": "rgba(48, 208, 182, 1)",
-        "btnCancelBgColor": "rgba(170, 170, 170, 1)",
-        "selectLableColor": "rgba(48, 208, 182, 1)",
-        "btnSaveBorderStyle": "double",
-        "dateBorderWidth": "1px",
-        "dateLableFontSize": "14px",
-        "dateBorderRadius": "4px",
-        "btnCancelBorderStyle": "double",
-        "selectLableFontSize": "14px",
-        "selectBorderStyle": "solid",
-        "selectIconFontColor": "rgba(48, 208, 182, 1)",
-        "btnCancelHeight": "44px",
-        "inputHeight": "40px",
-        "btnCancelFontColor": "rgba(255, 255, 255, 1)",
-        "dateBorderColor": "rgba(48, 208, 182, 1)",
-        "dateIconFontColor": "rgba(48, 208, 182, 1)",
-        "uploadBorderStyle": "solid",
-        "dateBorderStyle": "solid",
-        "dateLableColor": "rgba(48, 208, 182, 1)",
-        "dateFontSize": "14px",
-        "inputBorderWidth": "1px",
-        "uploadIconFontSize": "28px",
-        "selectHeight": "40px",
-        "inputFontColor": "#606266",
-        "uploadHeight": "148px",
-        "textareaLableColor": "rgba(48, 208, 182, 1)",
-        "textareaLableFontSize": "14px",
-        "btnCancelFontSize": "14px",
-        "inputBorderStyle": "solid",
-        "btnCancelBorderRadius": "30px 0 0 0 ",
-        "inputBgColor": "rgba(255, 255, 255, 1)",
-        "inputLableFontSize": "14px",
-        "uploadLableColor": "rgba(48, 208, 182, 1)",
-        "uploadBorderRadius": "4px",
-        "btnSaveHeight": "44px",
-        "selectBgColor": "#fff",
-        "btnSaveWidth": "88px",
-        "selectIconFontSize": "14px",
-        "dateHeight": "40px",
-        "selectBorderColor": "rgba(48, 208, 182, 1)",
-        "inputBorderColor": "rgba(48, 208, 182, 1)",
-        "uploadBorderColor": "rgba(48, 208, 182, 1)",
-        "textareaFontColor": "#606266",
-        "selectBorderWidth": "1px",
-        "dateFontColor": "#606266",
-        "btnCancelBorderWidth": "5px",
-        "uploadBorderWidth": "1px",
-        "textareaFontSize": "14px",
-        "selectBorderRadius": "4px",
-        "selectFontColor": "#606266",
-        "btnSaveBorderColor": "rgba(255, 255, 255, 1)",
-        "btnSaveBorderWidth": "5px"
+        btnSaveFontColor: "#fff",
+        selectFontSize: "14px",
+        btnCancelBorderColor: "rgba(255, 255, 255, 1)",
+        inputBorderRadius: "4px",
+        inputFontSize: "14px",
+        textareaBgColor: "#fff",
+        btnSaveFontSize: "14px",
+        textareaBorderRadius: "4px",
+        uploadBgColor: "#fff",
+        textareaBorderStyle: "solid",
+        btnCancelWidth: "88px",
+        textareaHeight: "120px",
+        dateBgColor: "#fff",
+        btnSaveBorderRadius: "30px 0 0 0 ",
+        uploadLableFontSize: "14px",
+        textareaBorderWidth: "1px",
+        inputLableColor: "rgba(48, 208, 182, 1)",
+        addEditBoxColor: "rgba(255, 255, 255, 0)",
+        dateIconFontSize: "14px",
+        btnSaveBgColor: "rgba(48, 208, 182, 1)",
+        uploadIconFontColor: "rgba(48, 208, 182, 1)",
+        textareaBorderColor: "rgba(48, 208, 182, 1)",
+        btnCancelBgColor: "rgba(170, 170, 170, 1)",
+        selectLableColor: "rgba(48, 208, 182, 1)",
+        btnSaveBorderStyle: "double",
+        dateBorderWidth: "1px",
+        dateLableFontSize: "14px",
+        dateBorderRadius: "4px",
+        btnCancelBorderStyle: "double",
+        selectLableFontSize: "14px",
+        selectBorderStyle: "solid",
+        selectIconFontColor: "rgba(48, 208, 182, 1)",
+        btnCancelHeight: "44px",
+        inputHeight: "40px",
+        btnCancelFontColor: "rgba(255, 255, 255, 1)",
+        dateBorderColor: "rgba(48, 208, 182, 1)",
+        dateIconFontColor: "rgba(48, 208, 182, 1)",
+        uploadBorderStyle: "solid",
+        dateBorderStyle: "solid",
+        dateLableColor: "rgba(48, 208, 182, 1)",
+        dateFontSize: "14px",
+        inputBorderWidth: "1px",
+        uploadIconFontSize: "28px",
+        selectHeight: "40px",
+        inputFontColor: "#606266",
+        uploadHeight: "148px",
+        textareaLableColor: "rgba(48, 208, 182, 1)",
+        textareaLableFontSize: "14px",
+        btnCancelFontSize: "14px",
+        inputBorderStyle: "solid",
+        btnCancelBorderRadius: "30px 0 0 0 ",
+        inputBgColor: "rgba(255, 255, 255, 1)",
+        inputLableFontSize: "14px",
+        uploadLableColor: "rgba(48, 208, 182, 1)",
+        uploadBorderRadius: "4px",
+        btnSaveHeight: "44px",
+        selectBgColor: "#fff",
+        btnSaveWidth: "88px",
+        selectIconFontSize: "14px",
+        dateHeight: "40px",
+        selectBorderColor: "rgba(48, 208, 182, 1)",
+        inputBorderColor: "rgba(48, 208, 182, 1)",
+        uploadBorderColor: "rgba(48, 208, 182, 1)",
+        textareaFontColor: "#606266",
+        selectBorderWidth: "1px",
+        dateFontColor: "#606266",
+        btnCancelBorderWidth: "5px",
+        uploadBorderWidth: "1px",
+        textareaFontSize: "14px",
+        selectBorderRadius: "4px",
+        selectFontColor: "#606266",
+        btnSaveBorderColor: "rgba(255, 255, 255, 1)",
+        btnSaveBorderWidth: "5px",
       },
-      id: '',
-      type: '',
+      id: "",
+      type: "",
       ro: {
         yuyuebianhao: false,
         bianhao: false,
@@ -340,17 +491,17 @@ export default {
       },
       ruleForm: {
         yuyuebianhao: this.getUUID(),
-        bianhao: '',
-        mingcheng: '',
-        gonghao: '',
-        xingming: '',
-        lianxidianhua: '',
-        huiyizhuti: '',
-        canhuirenyuan: '',
-        huiyishijian: '',
-        shiyongshizhang: '',
-        yuyuebeizhu: '',
-        shhf: '',
+        bianhao: "",
+        mingcheng: "",
+        gonghao: "",
+        xingming: "",
+        lianxidianhua: "",
+        huiyizhuti: "",
+        canhuirenyuan: "",
+        huiyishijian: "",
+        shiyongshizhang: "",
+        yuyuebeizhu: "",
+        shhf: "",
       },
       rules: {
         yuyuebianhao: [],
@@ -366,19 +517,19 @@ export default {
         yuyuebeizhu: [],
         sfsh: [],
         shhf: [],
-      }
+      },
     };
   },
   props: ["parent"],
   computed: {},
   created() {
-    this.addEditStyleChange()
-    this.addEditUploadStyleChange()
+    this.addEditStyleChange();
+    this.addEditUploadStyleChange();
   },
   methods: {
     // 下载
     download(file) {
-      window.open(`${file}`)
+      window.open(`${file}`);
     },
     // 初始化
     init(id, type) {
@@ -386,62 +537,62 @@ export default {
         this.id = id;
         this.type = type;
       }
-      if (this.type == 'info' || this.type == 'else') {
+      if (this.type == "info" || this.type == "else") {
         this.info(id);
-      } else if (this.type == 'cross') {
-        var obj = this.$storage.getObj('crossObj');
+      } else if (this.type == "cross") {
+        var obj = this.$storage.getObj("crossObj");
         for (var o in obj) {
-          if (o == 'yuyuebianhao') {
+          if (o == "yuyuebianhao") {
             this.ruleForm.yuyuebianhao = obj[o];
             this.ro.yuyuebianhao = true;
             continue;
           }
-          if (o == 'bianhao') {
+          if (o == "bianhao") {
             this.ruleForm.bianhao = obj[o];
             this.ro.bianhao = true;
             continue;
           }
-          if (o == 'mingcheng') {
+          if (o == "mingcheng") {
             this.ruleForm.mingcheng = obj[o];
             this.ro.mingcheng = true;
             continue;
           }
-          if (o == 'gonghao') {
+          if (o == "gonghao") {
             this.ruleForm.gonghao = obj[o];
             this.ro.gonghao = true;
             continue;
           }
-          if (o == 'xingming') {
+          if (o == "xingming") {
             this.ruleForm.xingming = obj[o];
             this.ro.xingming = true;
             continue;
           }
-          if (o == 'lianxidianhua') {
+          if (o == "lianxidianhua") {
             this.ruleForm.lianxidianhua = obj[o];
             this.ro.lianxidianhua = true;
             continue;
           }
-          if (o == 'huiyizhuti') {
+          if (o == "huiyizhuti") {
             this.ruleForm.huiyizhuti = obj[o];
             this.ro.huiyizhuti = true;
             continue;
           }
-          if (o == 'canhuirenyuan') {
+          if (o == "canhuirenyuan") {
             this.ruleForm.canhuirenyuan = obj[o];
             this.ro.canhuirenyuan = true;
             continue;
           }
-          if (o == 'huiyishijian') {
+          if (o == "huiyishijian") {
             this.ruleForm.huiyishijian = obj[o];
             this.ro.huiyishijian = true;
             continue;
           }
-          if (o == 'shiyongshizhang') {
+          if (o == "shiyongshizhang") {
             this.ruleForm.shiyongshizhang = obj[o];
             this.ro.shiyongshizhang = true;
             continue;
           }
-          if (o == 'yuyuebeizhu') {
+          if (o == "yuyuebeizhu") {
             this.ruleForm.yuyuebeizhu = obj[o];
             this.ro.yuyuebeizhu = true;
             continue;
@@ -450,21 +601,21 @@ export default {
       }
       // 获取用户信息
       this.$http({
-        url: `${this.$storage.get('sessionTable')}/session`,
-        method: "get"
-      }).then(({data}) => {
+        url: `${this.$storage.get("sessionTable")}/session`,
+        method: "get",
+      }).then(({ data }) => {
         if (data && data.code === 0) {
           var json = data.data;
-          if (json.gonghao != '' && json.gonghao) {
-            this.ruleForm.gonghao = json.gonghao
+          if (json.gonghao != "" && json.gonghao) {
+            this.ruleForm.gonghao = json.gonghao;
             this.ro.gonghao = true;
           }
-          if (json.xingming != '' && json.xingming) {
-            this.ruleForm.xingming = json.xingming
+          if (json.xingming != "" && json.xingming) {
+            this.ruleForm.xingming = json.xingming;
             this.ro.xingming = true;
           }
-          if (json.lianxidianhua != '' && json.lianxidianhua) {
-            this.ruleForm.lianxidianhua = json.lianxidianhua
+          if (json.lianxidianhua != "" && json.lianxidianhua) {
+            this.ruleForm.lianxidianhua = json.lianxidianhua;
             this.ro.lianxidianhua = true;
           }
         } else {
@@ -476,12 +627,12 @@ export default {
     info(id) {
       this.$http({
         url: `yuyuexinxi/info/${id}`,
-        method: "get"
-      }).then(({data}) => {
+        method: "get",
+      }).then(({ data }) => {
         if (data && data.code === 0) {
           this.ruleForm = data.data;
           //解决前台上传图片后台不显示的问题
-          let reg = new RegExp('../../../upload', 'g')//g代表全部
+          let reg = new RegExp("../../../upload", "g"); //g代表全部
         } else {
           this.$message.error(data.msg);
         }
@@ -490,43 +641,48 @@ export default {
     // 提交
     onSubmit() {
 
-
-      if (this.ruleForm.canhuirenyuan != null) {
-        this.ruleForm.canhuirenyuan = this.ruleForm.canhuirenyuan.replace(new RegExp(this.$base.url, "g"), "");
+      if((!this.ruleForm.canhuirenyuan) ){
+        this.$message.error(`参会人员不能为空`);
+        return
       }
 
+      if (this.ruleForm.canhuirenyuan != null) {
+        this.ruleForm.canhuirenyuan = this.ruleForm.canhuirenyuan.replace(
+          new RegExp(this.$base.url, "g"),
+          ""
+        );
+      }
 
       //更新跨表属性
       var crossuserid;
       var crossrefid;
       var crossoptnum;
-      if (this.type == 'cross') {
-        var statusColumnName = this.$storage.get('statusColumnName');
-        var statusColumnValue = this.$storage.get('statusColumnValue');
-        if (statusColumnName != '') {
-          var obj = this.$storage.getObj('crossObj');
+      if (this.type == "cross") {
+        var statusColumnName = this.$storage.get("statusColumnName");
+        var statusColumnValue = this.$storage.get("statusColumnValue");
+        if (statusColumnName != "") {
+          var obj = this.$storage.getObj("crossObj");
           if (!statusColumnName.startsWith("[")) {
             for (var o in obj) {
               if (o == statusColumnName) {
                 obj[o] = statusColumnValue;
               }
             }
-            var table = this.$storage.get('crossTable');
+            var table = this.$storage.get("crossTable");
             this.$http({
               url: `${table}/update`,
               method: "post",
-              data: obj
-            }).then(({data}) => {
-            });
+              data: obj,
+            }).then(({ data }) => {});
           } else {
-            crossuserid = this.$storage.get('userid');
-            crossrefid = obj['id'];
-            crossoptnum = this.$storage.get('statusColumnName');
+            crossuserid = this.$storage.get("userid");
+            crossrefid = obj["id"];
+            crossoptnum = this.$storage.get("statusColumnName");
             crossoptnum = crossoptnum.replace(/\[/, "").replace(/\]/, "");
           }
         }
       }
-      this.$refs["ruleForm"].validate(valid => {
+      this.$refs["ruleForm"].validate((valid) => {
         if (valid) {
           if (crossrefid && crossuserid) {
             this.ruleForm.crossuserid = crossuserid;
@@ -536,24 +692,22 @@ export default {
               limit: 10,
               crossuserid: this.ruleForm.crossuserid,
               crossrefid: this.ruleForm.crossrefid,
-            }
+            };
             this.$http({
               url: "yuyuexinxi/page",
               method: "get",
-              params: params
-            }).then(({
-                       data
-                     }) => {
+              params: params,
+            }).then(({ data }) => {
               if (data && data.code === 0) {
                 if (data.data.total >= crossoptnum) {
-                  this.$message.error(this.$storage.get('tips'));
+                  this.$message.error(this.$storage.get("tips"));
                   return false;
                 } else {
                   this.$http({
                     url: `yuyuexinxi/${!this.ruleForm.id ? "save" : "update"}`,
                     method: "post",
-                    data: this.ruleForm
-                  }).then(({data}) => {
+                    data: this.ruleForm,
+                  }).then(({ data }) => {
                     if (data && data.code === 0) {
                       this.$message({
                         message: "操作成功",
@@ -565,13 +719,12 @@ export default {
                           this.parent.yuyuexinxiCrossAddOrUpdateFlag = false;
                           this.parent.search();
                           this.parent.contentStyleChange();
-                        }
+                        },
                       });
                     } else {
                       this.$message.error(data.msg);
                     }
                   });
-
                 }
               } else {
               }
@@ -580,8 +733,8 @@ export default {
             this.$http({
               url: `yuyuexinxi/${!this.ruleForm.id ? "save" : "update"}`,
               method: "post",
-              data: this.ruleForm
-            }).then(({data}) => {
+              data: this.ruleForm,
+            }).then(({ data }) => {
               if (data && data.code === 0) {
                 this.$message({
                   message: "操作成功",
@@ -593,7 +746,7 @@ export default {
                     this.parent.yuyuexinxiCrossAddOrUpdateFlag = false;
                     this.parent.search();
                     this.parent.contentStyleChange();
-                  }
+                  },
                 });
               } else {
                 this.$message.error(data.msg);
@@ -616,145 +769,182 @@ export default {
     },
     canhuirenyuanUploadChange(fileUrls) {
       this.ruleForm.canhuirenyuan = fileUrls;
-      this.addEditUploadStyleChange()
+      this.addEditUploadStyleChange();
     },
     addEditStyleChange() {
       this.$nextTick(() => {
         // input
-        document.querySelectorAll('.addEdit-block .input .el-input__inner').forEach(el => {
-          el.style.height = this.addEditForm.inputHeight
-          el.style.color = this.addEditForm.inputFontColor
-          el.style.fontSize = this.addEditForm.inputFontSize
-          el.style.borderWidth = this.addEditForm.inputBorderWidth
-          el.style.borderStyle = this.addEditForm.inputBorderStyle
-          el.style.borderColor = this.addEditForm.inputBorderColor
-          el.style.borderRadius = this.addEditForm.inputBorderRadius
-          el.style.backgroundColor = this.addEditForm.inputBgColor
-        })
-        document.querySelectorAll('.addEdit-block .input .el-form-item__label').forEach(el => {
-          el.style.lineHeight = this.addEditForm.inputHeight
-          el.style.color = this.addEditForm.inputLableColor
-          el.style.fontSize = this.addEditForm.inputLableFontSize
-        })
+        document
+          .querySelectorAll(".addEdit-block .input .el-input__inner")
+          .forEach((el) => {
+            el.style.height = this.addEditForm.inputHeight;
+            el.style.color = this.addEditForm.inputFontColor;
+            el.style.fontSize = this.addEditForm.inputFontSize;
+            el.style.borderWidth = this.addEditForm.inputBorderWidth;
+            el.style.borderStyle = this.addEditForm.inputBorderStyle;
+            el.style.borderColor = this.addEditForm.inputBorderColor;
+            el.style.borderRadius = this.addEditForm.inputBorderRadius;
+            el.style.backgroundColor = this.addEditForm.inputBgColor;
+          });
+        document
+          .querySelectorAll(".addEdit-block .input .el-form-item__label")
+          .forEach((el) => {
+            el.style.lineHeight = this.addEditForm.inputHeight;
+            el.style.color = this.addEditForm.inputLableColor;
+            el.style.fontSize = this.addEditForm.inputLableFontSize;
+          });
         // select
-        document.querySelectorAll('.addEdit-block .select .el-input__inner').forEach(el => {
-          el.style.height = this.addEditForm.selectHeight
-          el.style.color = this.addEditForm.selectFontColor
-          el.style.fontSize = this.addEditForm.selectFontSize
-          el.style.borderWidth = this.addEditForm.selectBorderWidth
-          el.style.borderStyle = this.addEditForm.selectBorderStyle
-          el.style.borderColor = this.addEditForm.selectBorderColor
-          el.style.borderRadius = this.addEditForm.selectBorderRadius
-          el.style.backgroundColor = this.addEditForm.selectBgColor
-        })
-        document.querySelectorAll('.addEdit-block .select .el-form-item__label').forEach(el => {
-          el.style.lineHeight = this.addEditForm.selectHeight
-          el.style.color = this.addEditForm.selectLableColor
-          el.style.fontSize = this.addEditForm.selectLableFontSize
-        })
-        document.querySelectorAll('.addEdit-block .select .el-select__caret').forEach(el => {
-          el.style.color = this.addEditForm.selectIconFontColor
-          el.style.fontSize = this.addEditForm.selectIconFontSize
-        })
+        document
+          .querySelectorAll(".addEdit-block .select .el-input__inner")
+          .forEach((el) => {
+            el.style.height = this.addEditForm.selectHeight;
+            el.style.color = this.addEditForm.selectFontColor;
+            el.style.fontSize = this.addEditForm.selectFontSize;
+            el.style.borderWidth = this.addEditForm.selectBorderWidth;
+            el.style.borderStyle = this.addEditForm.selectBorderStyle;
+            el.style.borderColor = this.addEditForm.selectBorderColor;
+            el.style.borderRadius = this.addEditForm.selectBorderRadius;
+            el.style.backgroundColor = this.addEditForm.selectBgColor;
+          });
+        document
+          .querySelectorAll(".addEdit-block .select .el-form-item__label")
+          .forEach((el) => {
+            el.style.lineHeight = this.addEditForm.selectHeight;
+            el.style.color = this.addEditForm.selectLableColor;
+            el.style.fontSize = this.addEditForm.selectLableFontSize;
+          });
+        document
+          .querySelectorAll(".addEdit-block .select .el-select__caret")
+          .forEach((el) => {
+            el.style.color = this.addEditForm.selectIconFontColor;
+            el.style.fontSize = this.addEditForm.selectIconFontSize;
+          });
         // date
-        document.querySelectorAll('.addEdit-block .date .el-input__inner').forEach(el => {
-          el.style.height = this.addEditForm.dateHeight
-          el.style.color = this.addEditForm.dateFontColor
-          el.style.fontSize = this.addEditForm.dateFontSize
-          el.style.borderWidth = this.addEditForm.dateBorderWidth
-          el.style.borderStyle = this.addEditForm.dateBorderStyle
-          el.style.borderColor = this.addEditForm.dateBorderColor
-          el.style.borderRadius = this.addEditForm.dateBorderRadius
-          el.style.backgroundColor = this.addEditForm.dateBgColor
-        })
-        document.querySelectorAll('.addEdit-block .date .el-form-item__label').forEach(el => {
-          el.style.lineHeight = this.addEditForm.dateHeight
-          el.style.color = this.addEditForm.dateLableColor
-          el.style.fontSize = this.addEditForm.dateLableFontSize
-        })
-        document.querySelectorAll('.addEdit-block .date .el-input__icon').forEach(el => {
-          el.style.color = this.addEditForm.dateIconFontColor
-          el.style.fontSize = this.addEditForm.dateIconFontSize
-          el.style.lineHeight = this.addEditForm.dateHeight
-        })
+        document
+          .querySelectorAll(".addEdit-block .date .el-input__inner")
+          .forEach((el) => {
+            el.style.height = this.addEditForm.dateHeight;
+            el.style.color = this.addEditForm.dateFontColor;
+            el.style.fontSize = this.addEditForm.dateFontSize;
+            el.style.borderWidth = this.addEditForm.dateBorderWidth;
+            el.style.borderStyle = this.addEditForm.dateBorderStyle;
+            el.style.borderColor = this.addEditForm.dateBorderColor;
+            el.style.borderRadius = this.addEditForm.dateBorderRadius;
+            el.style.backgroundColor = this.addEditForm.dateBgColor;
+          });
+        document
+          .querySelectorAll(".addEdit-block .date .el-form-item__label")
+          .forEach((el) => {
+            el.style.lineHeight = this.addEditForm.dateHeight;
+            el.style.color = this.addEditForm.dateLableColor;
+            el.style.fontSize = this.addEditForm.dateLableFontSize;
+          });
+        document
+          .querySelectorAll(".addEdit-block .date .el-input__icon")
+          .forEach((el) => {
+            el.style.color = this.addEditForm.dateIconFontColor;
+            el.style.fontSize = this.addEditForm.dateIconFontSize;
+            el.style.lineHeight = this.addEditForm.dateHeight;
+          });
         // upload
-        let iconLineHeight = parseInt(this.addEditForm.uploadHeight) - parseInt(this.addEditForm.uploadBorderWidth) * 2 + 'px'
-        document.querySelectorAll('.addEdit-block .upload .el-upload--picture-card').forEach(el => {
-          el.style.width = this.addEditForm.uploadHeight
-          el.style.height = this.addEditForm.uploadHeight
-          el.style.borderWidth = this.addEditForm.uploadBorderWidth
-          el.style.borderStyle = this.addEditForm.uploadBorderStyle
-          el.style.borderColor = this.addEditForm.uploadBorderColor
-          el.style.borderRadius = this.addEditForm.uploadBorderRadius
-          el.style.backgroundColor = this.addEditForm.uploadBgColor
-        })
-        document.querySelectorAll('.addEdit-block .upload .el-form-item__label').forEach(el => {
-          el.style.lineHeight = this.addEditForm.uploadHeight
-          el.style.color = this.addEditForm.uploadLableColor
-          el.style.fontSize = this.addEditForm.uploadLableFontSize
-        })
-        document.querySelectorAll('.addEdit-block .upload .el-icon-plus').forEach(el => {
-          el.style.color = this.addEditForm.uploadIconFontColor
-          el.style.fontSize = this.addEditForm.uploadIconFontSize
-          el.style.lineHeight = iconLineHeight
-          el.style.display = 'block'
-        })
+        let iconLineHeight =
+          parseInt(this.addEditForm.uploadHeight) -
+          parseInt(this.addEditForm.uploadBorderWidth) * 2 +
+          "px";
+        document
+          .querySelectorAll(".addEdit-block .upload .el-upload--picture-card")
+          .forEach((el) => {
+            el.style.width = this.addEditForm.uploadHeight;
+            el.style.height = this.addEditForm.uploadHeight;
+            el.style.borderWidth = this.addEditForm.uploadBorderWidth;
+            el.style.borderStyle = this.addEditForm.uploadBorderStyle;
+            el.style.borderColor = this.addEditForm.uploadBorderColor;
+            el.style.borderRadius = this.addEditForm.uploadBorderRadius;
+            el.style.backgroundColor = this.addEditForm.uploadBgColor;
+          });
+        document
+          .querySelectorAll(".addEdit-block .upload .el-form-item__label")
+          .forEach((el) => {
+            el.style.lineHeight = this.addEditForm.uploadHeight;
+            el.style.color = this.addEditForm.uploadLableColor;
+            el.style.fontSize = this.addEditForm.uploadLableFontSize;
+          });
+        document
+          .querySelectorAll(".addEdit-block .upload .el-icon-plus")
+          .forEach((el) => {
+            el.style.color = this.addEditForm.uploadIconFontColor;
+            el.style.fontSize = this.addEditForm.uploadIconFontSize;
+            el.style.lineHeight = iconLineHeight;
+            el.style.display = "block";
+          });
         // 多文本输入框
-        document.querySelectorAll('.addEdit-block .textarea .el-textarea__inner').forEach(el => {
-          el.style.height = this.addEditForm.textareaHeight
-          el.style.color = this.addEditForm.textareaFontColor
-          el.style.fontSize = this.addEditForm.textareaFontSize
-          el.style.borderWidth = this.addEditForm.textareaBorderWidth
-          el.style.borderStyle = this.addEditForm.textareaBorderStyle
-          el.style.borderColor = this.addEditForm.textareaBorderColor
-          el.style.borderRadius = this.addEditForm.textareaBorderRadius
-          el.style.backgroundColor = this.addEditForm.textareaBgColor
-        })
-        document.querySelectorAll('.addEdit-block .textarea .el-form-item__label').forEach(el => {
-          // el.style.lineHeight = this.addEditForm.textareaHeight
-          el.style.color = this.addEditForm.textareaLableColor
-          el.style.fontSize = this.addEditForm.textareaLableFontSize
-        })
+        document
+          .querySelectorAll(".addEdit-block .textarea .el-textarea__inner")
+          .forEach((el) => {
+            el.style.height = this.addEditForm.textareaHeight;
+            el.style.color = this.addEditForm.textareaFontColor;
+            el.style.fontSize = this.addEditForm.textareaFontSize;
+            el.style.borderWidth = this.addEditForm.textareaBorderWidth;
+            el.style.borderStyle = this.addEditForm.textareaBorderStyle;
+            el.style.borderColor = this.addEditForm.textareaBorderColor;
+            el.style.borderRadius = this.addEditForm.textareaBorderRadius;
+            el.style.backgroundColor = this.addEditForm.textareaBgColor;
+          });
+        document
+          .querySelectorAll(".addEdit-block .textarea .el-form-item__label")
+          .forEach((el) => {
+            // el.style.lineHeight = this.addEditForm.textareaHeight
+            el.style.color = this.addEditForm.textareaLableColor;
+            el.style.fontSize = this.addEditForm.textareaLableFontSize;
+          });
         // 保存
-        document.querySelectorAll('.addEdit-block .btn .btn-success').forEach(el => {
-          el.style.width = this.addEditForm.btnSaveWidth
-          el.style.height = this.addEditForm.btnSaveHeight
-          el.style.color = this.addEditForm.btnSaveFontColor
-          el.style.fontSize = this.addEditForm.btnSaveFontSize
-          el.style.borderWidth = this.addEditForm.btnSaveBorderWidth
-          el.style.borderStyle = this.addEditForm.btnSaveBorderStyle
-          el.style.borderColor = this.addEditForm.btnSaveBorderColor
-          el.style.borderRadius = this.addEditForm.btnSaveBorderRadius
-          el.style.backgroundColor = this.addEditForm.btnSaveBgColor
-        })
+        document
+          .querySelectorAll(".addEdit-block .btn .btn-success")
+          .forEach((el) => {
+            el.style.width = this.addEditForm.btnSaveWidth;
+            el.style.height = this.addEditForm.btnSaveHeight;
+            el.style.color = this.addEditForm.btnSaveFontColor;
+            el.style.fontSize = this.addEditForm.btnSaveFontSize;
+            el.style.borderWidth = this.addEditForm.btnSaveBorderWidth;
+            el.style.borderStyle = this.addEditForm.btnSaveBorderStyle;
+            el.style.borderColor = this.addEditForm.btnSaveBorderColor;
+            el.style.borderRadius = this.addEditForm.btnSaveBorderRadius;
+            el.style.backgroundColor = this.addEditForm.btnSaveBgColor;
+          });
         // 返回
-        document.querySelectorAll('.addEdit-block .btn .btn-close').forEach(el => {
-          el.style.width = this.addEditForm.btnCancelWidth
-          el.style.height = this.addEditForm.btnCancelHeight
-          el.style.color = this.addEditForm.btnCancelFontColor
-          el.style.fontSize = this.addEditForm.btnCancelFontSize
-          el.style.borderWidth = this.addEditForm.btnCancelBorderWidth
-          el.style.borderStyle = this.addEditForm.btnCancelBorderStyle
-          el.style.borderColor = this.addEditForm.btnCancelBorderColor
-          el.style.borderRadius = this.addEditForm.btnCancelBorderRadius
-          el.style.backgroundColor = this.addEditForm.btnCancelBgColor
-        })
-      })
+        document
+          .querySelectorAll(".addEdit-block .btn .btn-close")
+          .forEach((el) => {
+            el.style.width = this.addEditForm.btnCancelWidth;
+            el.style.height = this.addEditForm.btnCancelHeight;
+            el.style.color = this.addEditForm.btnCancelFontColor;
+            el.style.fontSize = this.addEditForm.btnCancelFontSize;
+            el.style.borderWidth = this.addEditForm.btnCancelBorderWidth;
+            el.style.borderStyle = this.addEditForm.btnCancelBorderStyle;
+            el.style.borderColor = this.addEditForm.btnCancelBorderColor;
+            el.style.borderRadius = this.addEditForm.btnCancelBorderRadius;
+            el.style.backgroundColor = this.addEditForm.btnCancelBgColor;
+          });
+      });
     },
     addEditUploadStyleChange() {
       this.$nextTick(() => {
-        document.querySelectorAll('.addEdit-block .upload .el-upload-list--picture-card .el-upload-list__item').forEach(el => {
-          el.style.width = this.addEditForm.uploadHeight
-          el.style.height = this.addEditForm.uploadHeight
-          el.style.borderWidth = this.addEditForm.uploadBorderWidth
-          el.style.borderStyle = this.addEditForm.uploadBorderStyle
-          el.style.borderColor = this.addEditForm.uploadBorderColor
-          el.style.borderRadius = this.addEditForm.uploadBorderRadius
-          el.style.backgroundColor = this.addEditForm.uploadBgColor
-        })
-      })
+        document
+          .querySelectorAll(
+            ".addEdit-block .upload .el-upload-list--picture-card .el-upload-list__item"
+          )
+          .forEach((el) => {
+            el.style.width = this.addEditForm.uploadHeight;
+            el.style.height = this.addEditForm.uploadHeight;
+            el.style.borderWidth = this.addEditForm.uploadBorderWidth;
+            el.style.borderStyle = this.addEditForm.uploadBorderStyle;
+            el.style.borderColor = this.addEditForm.uploadBorderColor;
+            el.style.borderRadius = this.addEditForm.uploadBorderRadius;
+            el.style.backgroundColor = this.addEditForm.uploadBgColor;
+          });
+      });
     },
-  }
+  },
 };
 </script>
 <style lang="scss">

@@ -1,7 +1,7 @@
 const base = {
     get() {
         return {
-            url : "http://localhost:8080/springboot3if68/upload/",
+            url : "http://localhost:8080/springboot3if68/",
             name: "springboot3if68",
             // 退出到首页链接
             indexUrl: ''
