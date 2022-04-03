@@ -640,7 +640,7 @@ export default {
     },
     // 提交
     onSubmit() {
-
+// 设置参会人员不能为空
       if((!this.ruleForm.canhuirenyuan) ){
         this.$message.error(`参会人员不能为空`);
         return
