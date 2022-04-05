@@ -1,19 +1,19 @@
 <template>
   <el-card class="box-card">
     <div slot="header" class="header">
-      <span>{{title}}</span>
+      <span>{{ title }}</span>
       <span>
-        <el-tag size="small" :type="titleTag">{{titleUnit}}</el-tag>
+        <el-tag size="small" :type="titleTag">{{ titleUnit }}</el-tag>
       </span>
     </div>
     <div class="content">
-      {{content}}&nbsp;&nbsp;
-      <span class="unit">{{contentUnit}}</span>
+      {{ content }}&nbsp;&nbsp;
+      <span class="unit">{{ contentUnit }}</span>
     </div>
     <div class="bottom">
-      <span>{{bottomTitle}}</span>
+      <span>{{ bottomTitle }}</span>
       <span>
-        {{bottomContent}}
+        {{ bottomContent }}
         <i :class="bottomIcon"></i>
       </span>
     </div>
@@ -29,8 +29,8 @@ export default {
     "contentUnit",
     "bottomTitle",
     "bottomContent",
-    "bottomIcon"
-  ]
+    "bottomIcon",
+  ],
 };
 </script>
 <style lang="scss" scoped>

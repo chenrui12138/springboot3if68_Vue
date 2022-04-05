@@ -1,5 +1,5 @@
 <template>
-  <div id="home-chart" style="width:100%;height:400px;"></div>
+  <div id="home-chart" style="width: 100%; height: 400px"></div>
 </template>
 <script>
 export default {
@@ -13,16 +13,16 @@ export default {
       // 指定图表的配置项和数据
       var option = {
         tooltip: {
-          trigger: "axis"
+          trigger: "axis",
         },
         legend: {
-          data: ["访问量", "用户量", "收入"]
+          data: ["访问量", "用户量", "收入"],
         },
         grid: {
           left: "3%",
           right: "4%",
           bottom: "3%",
-          containLabel: true
+          containLabel: true,
         },
         xAxis: {
           type: "category",
@@ -39,11 +39,11 @@ export default {
             "9月",
             "10月",
             "11月",
-            "12月"
-          ]
+            "12月",
+          ],
         },
         yAxis: {
-          type: "value"
+          type: "value",
         },
         series: [
           {
@@ -51,71 +51,35 @@ export default {
             type: "line",
             stack: "总量",
             data: [
-              120,
-              132,
-              101,
-              134,
-              90,
-              230,
-              210,
-              120,
-              132,
-              101,
-              134,
-              90,
-              230
-            ]
+              120, 132, 101, 134, 90, 230, 210, 120, 132, 101, 134, 90, 230,
+            ],
           },
           {
             name: "用户量",
             type: "line",
             stack: "总量",
             data: [
-              220,
-              182,
-              191,
-              234,
-              290,
-              330,
-              310,
-              182,
-              191,
-              234,
-              290,
-              330,
-              310
-            ]
+              220, 182, 191, 234, 290, 330, 310, 182, 191, 234, 290, 330, 310,
+            ],
           },
           {
             name: "收入",
             type: "line",
             stack: "总量",
             data: [
-              150,
-              232,
-              201,
-              154,
-              190,
-              330,
-              410,
-              232,
-              201,
-              154,
-              190,
-              330,
-              410
-            ]
-          }
-        ]
+              150, 232, 201, 154, 190, 330, 410, 232, 201, 154, 190, 330, 410,
+            ],
+          },
+        ],
       };
       // // 使用刚指定的配置项和数据显示图表。
       myChart.setOption(option);
       //根据窗口的大小变动图表
-      window.onresize = function() {
+      window.onresize = function () {
         myChart.resize();
       };
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

@@ -1,35 +1,51 @@
 <template>
-<div class="content">
-			<div class="text main-text" :style='{"padding":"0","boxShadow":"0 0 0px rgba(0,0,0,.1)","margin":"0 auto","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 0)","color":"#333","borderRadius":"6px","borderWidth":"0","width":"auto","lineHeight":"64px","fontSize":"24px","borderStyle":"solid"}'>欢迎使用 {{this.$project.projectName}}</div>
-	</div>
+  <div class="content">
+    <div
+      class="text main-text"
+      :style="{
+        padding: '0',
+        boxShadow: '0 0 0px rgba(0,0,0,.1)',
+        margin: '0 auto',
+        borderColor: 'rgba(0,0,0,.3)',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        color: '#333',
+        borderRadius: '6px',
+        borderWidth: '0',
+        width: 'auto',
+        lineHeight: '64px',
+        fontSize: '24px',
+        borderStyle: 'solid',
+      }"
+    >
+      欢迎使用 {{ this.$project.projectName }}
+    </div>
+  </div>
 </template>
 <script>
-import router from '@/router/router-static'
+import router from "@/router/router-static";
 export default {
-	data() {
-		return {
-			
-		};
-	},
-  mounted(){
+  data() {
+    return {};
+  },
+  mounted() {
     this.init();
   },
-  methods:{
-    init(){
-        if(this.$storage.get('Token')){
+  methods: {
+    init() {
+      if (this.$storage.get("Token")) {
         this.$http({
-            url: `${this.$storage.get('sessionTable')}/session`,
-            method: "get"
+          url: `${this.$storage.get("sessionTable")}/session`,
+          method: "get",
         }).then(({ data }) => {
-            if (data && data.code != 0) {
-            router.push({ name: 'login' })
-            }
+          if (data && data.code != 0) {
+            router.push({ name: "login" });
+          }
         });
-        }else{
-            router.push({ name: 'login' })
-        }
-    }
-  }
+      } else {
+        router.push({ name: "login" });
+      }
+    },
+  },
 };
 </script>
 
@@ -43,7 +59,7 @@ export default {
   min-height: 500px;
   text-align: center;
   background: transparent;
-  .main-text{
+  .main-text {
     font-size: 38px;
     font-weight: bold;
     margin-top: 15%;

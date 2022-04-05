@@ -22,11 +22,11 @@ export default {
   data() {
     return {
       menuList: [],
-      dynamicMenuRoutes: []
+      dynamicMenuRoutes: [],
     };
   },
   components: {
-    SubMenu
+    SubMenu,
   },
   mounted() {
     // 获取动态菜单数据并且渲染
@@ -38,8 +38,8 @@ export default {
   methods: {
     menuHandler(path) {
       this.$router.push({ path: path });
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

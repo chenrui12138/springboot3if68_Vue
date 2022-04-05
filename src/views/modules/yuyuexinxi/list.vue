@@ -320,7 +320,7 @@
             <template slot-scope="scope">
               <!-- 展示文件名称 -->
               <!-- {{fileName(scope.row.canhuirenyuan)}} -->
-              {{ scope.row.canhuirenyuan }}
+              <!-- {{ scope.row.canhuirenyuan }} -->
               <!-- <span v-html="fileName(scope.row.canhuirenyuan)"></span> -->
 
               <el-button

@@ -9,7 +9,7 @@ const base = {
     },
     getProjectName(){
         return {
-            projectName: "会议预约系统设计与实现"
+            projectName: "会议预约系统"
         } 
     }
 }

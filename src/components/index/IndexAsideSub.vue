@@ -1,5 +1,8 @@
 <template>
-  <el-submenu v-if="menu.list && menu.list.length >= 1" :index="menu.menuId + ''">
+  <el-submenu
+    v-if="menu.list && menu.list.length >= 1"
+    :index="menu.menuId + ''"
+  >
     <template slot="title">
       <span>{{ menu.name }}</span>
     </template>
@@ -22,21 +25,21 @@ export default {
   props: {
     menu: {
       type: Object,
-      required: true
+      required: true,
     },
     dynamicMenuRoutes: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
   components: {
-    SubMenu
+    SubMenu,
   },
   methods: {
     // 通过menuId与动态(菜单)路由进行匹配跳转至指定路由
     gotoRouteHandle(menu) {
       var route = this.dynamicMenuRoutes.filter(
-        item => item.meta.menuId === menu.menuId
+        (item) => item.meta.menuId === menu.menuId
       );
       if (route.length >= 1) {
         if (route[0].component != null) {
@@ -45,7 +48,7 @@ export default {
           this.$router.push({ name: "404" });
         }
       }
-    }
-  }
+    },
+  },
 };
 </script>
