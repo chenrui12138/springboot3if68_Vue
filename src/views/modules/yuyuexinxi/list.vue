@@ -645,6 +645,7 @@ export default {
           padding: "10px 20px",
           boxShadow: "0 0 0px rgba(0,0,0,0)",
           flag: "1",
+          // 背景页
           backgroundImage:
             "http://codegen.caihongy.cn/20211123/27e375b9de244161b1e849970e171c58.png",
           background:

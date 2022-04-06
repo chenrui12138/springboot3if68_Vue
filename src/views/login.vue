@@ -401,6 +401,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  // 背景页面
   background-image: url(http://codegen.caihongy.cn/20211123/50cc9048036f4492a8282b0fa503a1e7.png);
 
   .loginInBt {
