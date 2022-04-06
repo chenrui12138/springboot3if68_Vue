@@ -75,6 +75,26 @@
           </el-form-item>
         </div>
       </el-col>
+      <!-- 增加修改角色 -->
+      <el-col :span="12">
+        <el-form-item class="select" v-if="type!='info'"  label="角色" prop="role">
+          <el-select :disabled="ro.role" v-model="ruleForm.role" placeholder="请选择角色">
+            <el-option
+                v-for="(item,index) in roleOptions"
+                v-bind:key="index"
+                :label="item"
+                :value="item">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <div v-else>
+          <el-form-item class="input" label="角色" prop="role">
+	      <el-input v-model="ruleForm.role"
+                placeholder="角色" readonly></el-input>
+          </el-form-item>
+        </div>
+      </el-col>
+
       </el-row>
       <el-form-item class="btn">
         <el-button v-if="type!='info'" type="primary" class="btn-success" @click="onSubmit">提交</el-button>
@@ -253,6 +273,7 @@ export default {
         }
       });
             this.xingbieOptions = "男,女".split(',')
+            this.roleOptions = "管理员,用户".split(',')
     },
     // 多级联动参数
     info(id) {

@@ -64,9 +64,15 @@
             ></el-input>
           </el-form-item>
         </el-col>
-        <el-form-item v-if="flag == 'users'" label="用户名" prop="xingming">
-          <el-input v-model="ruleForm.xingming" placeholder="用户名"></el-input>
-        </el-form-item>
+        <el-col :span="12">
+          <el-form-item v-if="flag == 'users'" label="姓名" prop="xingming">
+            <el-input
+              v-model="ruleForm.xingming"
+              placeholder="姓名"
+              clearable
+            ></el-input>
+          </el-form-item>
+        </el-col>
         <!-- 增加信息 -->
         
         <el-col :span="12">

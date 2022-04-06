@@ -224,6 +224,19 @@
               {{ scope.row.lianxidianhua }}
             </template>
           </el-table-column>
+
+          <!-- 增加角色 -->
+          <el-table-column
+            :sortable="contents.tableSortable"
+            :align="contents.tableAlign"
+            prop="role"
+            header-align="center"
+            label="用户角色"
+          >
+            <template slot-scope="scope">
+              {{ scope.row.role }}
+            </template>
+          </el-table-column>
           <el-table-column
             width="300"
             :align="contents.tableAlign"
