@@ -1117,7 +1117,7 @@ export default {
 }
 
 .tables /deep/ .el-table__body tr:hover > td {
-  background-color: rgba(245, 245, 245, 1) !important;
+  background-color: rgb(245, 245, 245，1) !important;
   color: #333 !important;
 }
 </style>
