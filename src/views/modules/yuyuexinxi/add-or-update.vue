@@ -203,12 +203,13 @@
               label="参会人员"
               prop="canhuirenyuan"
             >
+              <!-- 展示文件名称 -->
             <div v-html="ruleForm.canhuirenyuan.split('&')[1]"></div>
               <el-button
                 type="text"
                 size="small"
                 @click="download($base.url+ruleForm.canhuirenyuan)">下载</el-button>
-              <!-- 展示文件名称 -->
+
               <!-- <el-date-picker
                 value-format="yyyy-MM-dd HH:mm:ss"
                 v-model="ruleForm.huiyishijian"
