@@ -203,6 +203,7 @@
               label="参会人员"
               prop="canhuirenyuan"
             >
+            <div v-html="ruleForm.canhuirenyuan.split('&')[1]"></div>
               <el-button
                 type="text"
                 size="small"

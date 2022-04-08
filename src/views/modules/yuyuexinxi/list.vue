@@ -321,7 +321,7 @@
               <!-- 展示文件名称 -->
               <!-- {{fileName(scope.row.canhuirenyuan)}} -->
               <!-- {{ scope.row.canhuirenyuan }} -->
-              <!-- <span v-html="fileName(scope.row.canhuirenyuan)"></span> -->
+              <div v-html="scope.row.canhuirenyuan.split('&')[1]"></div>
 
               <el-button
                 type="text"
@@ -330,6 +330,7 @@
               >
                 下载
               </el-button>
+              
             </template>
           </el-table-column>
           <el-table-column
