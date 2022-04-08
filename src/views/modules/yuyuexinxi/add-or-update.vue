@@ -188,6 +188,8 @@
             label="参会人员"
             prop="canhuirenyuan"
           >
+          <!-- 展示文件名称 -->
+            <div v-html="ruleForm.canhuirenyuan.split('&')[1]"></div>
             <file-upload
               tip="点击上传参会人员"
               action="file/upload"
