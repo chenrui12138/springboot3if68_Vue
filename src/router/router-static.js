@@ -27,61 +27,61 @@ const routes = [{
         path: '/',
         name: '首页',
         component: Home,
-        meta: {icon: '', title: 'center'}
+        meta: { icon: '', title: 'center' }
     }, {
         path: '/updatePassword',
         name: '修改密码',
         component: UpdatePassword,
-        meta: {icon: '', title: 'updatePassword'}
+        meta: { icon: '', title: 'updatePassword' }
     }, {
         path: '/pay',
         name: '支付',
         component: pay,
-        meta: {icon: '', title: 'pay'}
+        meta: { icon: '', title: 'pay' }
     }, {
         path: '/center',
         name: '个人信息',
         component: center,
-        meta: {icon: '', title: 'center'}
+        meta: { icon: '', title: 'center' }
     }
         , {
-            path: '/huiyishi',
-            name: '会议室',
-            component: huiyishi
-        }
+        path: '/huiyishi',
+        name: '会议室',
+        component: huiyishi
+    }
         , {
-            path: '/yonghu',
-            name: '用户',
-            component: yonghu
-        }
+        path: '/yonghu',
+        name: '用户',
+        component: yonghu
+    }
         , {
-            path: '/yuyuexinxi',
-            name: '预约信息',
-            component: yuyuexinxi
-        }
+        path: '/yuyuexinxi',
+        name: '预约信息',
+        component: yuyuexinxi
+    }
     ]
 },
-    {
-        path: '/login',
-        name: 'login',
-        component: Login,
-        meta: {icon: '', title: 'login'}
-    },
-    {
-        path: '/register',
-        name: 'register',
-        component: register,
-        meta: {icon: '', title: 'register'}
-    },
-    {
-        path: '/',
-        name: '首页',
-        redirect: '/index'
-    }, /*默认跳转路由*/
-    {
-        path: '*',
-        component: NotFound
-    }
+{
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: { icon: '', title: 'login' }
+},
+{
+    path: '/register',
+    name: 'register',
+    component: register,
+    meta: { icon: '', title: 'register' }
+},
+{
+    path: '/',
+    name: '首页',
+    redirect: '/index'
+}, /*默认跳转路由*/
+{
+    path: '*',
+    component: NotFound
+}
 ]
 //3.实例化VueRouter  注意：名字
 const router = new VueRouter({
