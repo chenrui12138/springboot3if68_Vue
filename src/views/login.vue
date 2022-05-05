@@ -127,7 +127,7 @@
                 background-color: rgba(0, 0, 0, 0);
                 box-shadow: 0 0 6px rgba(0, 0, 0, 0);
               "
-              ><svg-icon icon-class="code"
+              ><svg-icon icon-class="batch"
             /></span>
             <el-input
               placeholder="请输入验证码"
