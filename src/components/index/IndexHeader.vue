@@ -54,7 +54,8 @@
           fontSize: heads.headUserInfoFontSize,
         }"
       >
-        {{ this.$storage.get("role") }} {{ this.$storage.get("adminName") }}
+        <!-- {{ this.$storage.get("role") }} {{ this.$storage.get("adminName") }} -->
+        {{ this.$storage.get("role") }} {{ this.$storage.get("aaa") }}
       </div>
       <div
         class="logout"

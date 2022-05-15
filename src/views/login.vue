@@ -275,7 +275,20 @@ export default {
           this.$storage.set("role", this.rulesForm.role);
           this.$storage.set("sessionTable", this.tableName);
           this.$storage.set("adminName", this.rulesForm.username);
-          this.$router.replace({ path: "/index/" });
+          
+          //修改页眉为名字
+          this.$http({
+            url: `${this.tableName}/selectByGonghao/${this.rulesForm.username}`,
+            method: "get",
+          }).then(({ data })=>{
+            if (data && data.code === 0) {
+            this.$storage.set("aaa", data.data.xingming);
+            this.$router.replace({ path: "/index/" });
+            }else {
+              this.$message.error(data.msg);
+            }
+          });
+          
         } else {
           this.$message.error(data.msg);
         }
