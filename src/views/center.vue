@@ -53,7 +53,7 @@
             ></el-input>
           </el-form-item>
         </el-col>
-        
+
         <el-col :span="12">
           <el-form-item v-if="flag == 'users'" label="工号" prop="gonghao">
             <el-input
@@ -74,7 +74,7 @@
           </el-form-item>
         </el-col>
         <!-- 增加信息 -->
-        
+
         <el-col :span="12">
           <el-form-item v-if="flag == 'users'" label="性别" prop="xingbie">
             <el-select v-model="ruleForm.xingbie" placeholder="请选择性别">
